@@ -17,14 +17,14 @@ public class Main {
                 new Circle(9)
         };
 
-        Shape shapeWitMaxArea = getShapeWithMaxArea(shapes);
+        Shape shapeWithMaxArea = getShapeWithMaxArea(shapes);
 
         System.out.println("Фигура с максимальной площадью:");
 
-        if (shapeWitMaxArea != null) {
+        if (shapeWithMaxArea != null) {
             System.out.printf("%s%nШирина: %.2f%nВысота: %.2f%nПлощадь: %.2f%nПериметр: %.2f%n",
-                    shapeWitMaxArea, shapeWitMaxArea.getWidth(), shapeWitMaxArea.getHeight(),
-                    shapeWitMaxArea.getArea(), shapeWitMaxArea.getPerimeter());
+                    shapeWithMaxArea, shapeWithMaxArea.getWidth(), shapeWithMaxArea.getHeight(),
+                    shapeWithMaxArea.getArea(), shapeWithMaxArea.getPerimeter());
             System.out.println();
         }
 
