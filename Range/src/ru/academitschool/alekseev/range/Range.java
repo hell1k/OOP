@@ -42,7 +42,7 @@ public class Range {
     }
 
     public Range[] getUnion(Range range) {
-        if (to < range.from) {
+        if (to < range.from || from > range.to) {
             return new Range[]{new Range(from, to), new Range(range.from, range.to)};
         }
 
@@ -50,19 +50,19 @@ public class Range {
     }
 
     public Range[] getDifference(Range range) {
-        if (to < range.from || range.to < from) {
+        if (to <= range.from || range.to <= from) {
             return new Range[]{new Range(from, to)};
         }
 
-        if (from > range.from && to < range.to) {
+        if (from >= range.from && to <= range.to) {
             return new Range[]{};
         }
 
-        if (from > range.from) {
+        if (from >= range.from) {
             return new Range[]{new Range(range.to, to)};
         }
 
-        if (to < range.to) {
+        if (to <= range.to) {
             return new Range[]{new Range(from, range.from)};
         }
 
