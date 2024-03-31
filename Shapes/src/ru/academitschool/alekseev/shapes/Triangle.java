@@ -1,6 +1,6 @@
 package ru.academitschool.alekseev.shapes;
 
-public class Triangle implements Shape{
+public class Triangle implements Shape {
     private final double x1;
     private final double y1;
 
@@ -21,6 +21,30 @@ public class Triangle implements Shape{
         this.y3 = y3;
     }
 
+    public double getX1() {
+        return x1;
+    }
+
+    public double getY1() {
+        return y1;
+    }
+
+    public double getX2() {
+        return x2;
+    }
+
+    public double getY2() {
+        return y2;
+    }
+
+    public double getX3() {
+        return x3;
+    }
+
+    public double getY3() {
+        return y3;
+    }
+
     @Override
     public double getWidth() {
         return Math.max(Math.max(x1, x2), x3) - Math.min(Math.min(x1, x2), x3);
@@ -37,14 +61,14 @@ public class Triangle implements Shape{
 
     @Override
     public double getArea() {
-        double sideA = getSideLength(x1, y1, x2, y2);
-        double sideB = getSideLength(x2, y2, x3, y3);
-        double sideC = getSideLength(x1, y1, x3, y3);
+        double sideLengthA = getSideLength(x1, y1, x2, y2);
+        double sideLengthB = getSideLength(x2, y2, x3, y3);
+        double sideLengthC = getSideLength(x1, y1, x3, y3);
 
-        double halfPerimeter = (sideA + sideB + sideC) / 2;
+        double halfPerimeter = (sideLengthA + sideLengthB + sideLengthC) / 2;
 
-        return Math.sqrt(halfPerimeter * (halfPerimeter - sideA) *
-                (halfPerimeter - sideB) * (halfPerimeter - sideC));
+        return Math.sqrt(halfPerimeter * (halfPerimeter - sideLengthA) *
+                (halfPerimeter - sideLengthB) * (halfPerimeter - sideLengthC));
     }
 
     @Override
@@ -54,9 +78,7 @@ public class Triangle implements Shape{
 
     @Override
     public String toString() {
-        return "Треугольник с координатами: (" + x1 + "; " + y1 +
-                "), (" + x2 + "; " + y2 +
-                "), (" + x3 + "; " + y3 + ")";
+        return "Треугольник с координатами: (" + x1 + "; " + y1 + "), (" + x2 + "; " + y2 + "), (" + x3 + "; " + y3 + ")";
     }
 
     @Override
@@ -71,12 +93,12 @@ public class Triangle implements Shape{
 
         Triangle triangle = (Triangle) object;
 
-        return triangle.x1 == x1 &&
-                triangle.y1 == y1 &&
-                triangle.x2 == x2 &&
-                triangle.y2 == y2 &&
-                triangle.x3 == x3 &&
-                triangle.y3 == y3;
+        return triangle.x1 == x1
+                && triangle.y1 == y1
+                && triangle.x2 == x2
+                && triangle.y2 == y2
+                && triangle.x3 == x3
+                && triangle.y3 == y3;
     }
 
     @Override

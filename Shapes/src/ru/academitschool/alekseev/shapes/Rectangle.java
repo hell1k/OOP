@@ -6,11 +6,11 @@ public class Rectangle implements Shape {
 
     public Rectangle(double width, double height) {
         if (width <= 0) {
-            throw new IllegalArgumentException("Ширина прямоугольника должна быть больше нуля");
+            throw new IllegalArgumentException("Ширина прямоугольника должна быть больше нуля. Ширина: + " + width);
         }
 
         if (height <= 0) {
-            throw new IllegalArgumentException("Высота прямоугольника должна быть больше нуля");
+            throw new IllegalArgumentException("Высота прямоугольника должна быть больше нуля. Высота: " + height);
         }
 
         this.width = width;
@@ -34,12 +34,12 @@ public class Rectangle implements Shape {
 
     @Override
     public double getPerimeter() {
-        return 2 * height + 2 * width;
+        return 2 * (height + width);
     }
 
     @Override
     public String toString() {
-        return "Прямоугольник со шириной " + width + " и высотой " + height;
+        return "Прямоугольник с шириной " + width + " и высотой " + height;
     }
 
     @Override

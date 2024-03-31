@@ -5,10 +5,14 @@ public class Square implements Shape {
 
     public Square(double sideLength) {
         if (sideLength <= 0) {
-            throw new IllegalArgumentException("Строны квадрата должны быть больше нуля");
+            throw new IllegalArgumentException("Стороны квадрата должны быть больше нуля. Сторона квадрата: " + sideLength);
         }
 
         this.sideLength = sideLength;
+    }
+
+    public double getSideLength() {
+        return sideLength;
     }
 
     @Override
@@ -23,7 +27,7 @@ public class Square implements Shape {
 
     @Override
     public double getArea() {
-        return Math.pow(sideLength, 2);
+        return sideLength * sideLength;
     }
 
     @Override

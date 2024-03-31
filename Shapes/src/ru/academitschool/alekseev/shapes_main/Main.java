@@ -20,23 +20,13 @@ public class Main {
         Shape shapeWithMaxArea = getShapeWithMaxArea(shapes);
 
         System.out.println("Фигура с максимальной площадью:");
-
-        if (shapeWithMaxArea != null) {
-            System.out.printf("%s%nШирина: %.2f%nВысота: %.2f%nПлощадь: %.2f%nПериметр: %.2f%n",
-                    shapeWithMaxArea, shapeWithMaxArea.getWidth(), shapeWithMaxArea.getHeight(),
-                    shapeWithMaxArea.getArea(), shapeWithMaxArea.getPerimeter());
-            System.out.println();
-        }
+        System.out.printf("%s%n", shapeWithMaxArea);
+        System.out.println();
 
         Shape shapeWithSecondPerimeter = getShapeWithSecondLargestPerimeter(shapes);
 
         System.out.println("Фигура со вторым по величине периметром:");
-
-        if (shapeWithSecondPerimeter != null) {
-            System.out.printf("%s%nШирина: %.2f%nВысота: %.2f%nПлощадь: %.2f%nПериметр: %.2f%n",
-                    shapeWithSecondPerimeter, shapeWithSecondPerimeter.getWidth(), shapeWithSecondPerimeter.getHeight(),
-                    shapeWithSecondPerimeter.getArea(), shapeWithSecondPerimeter.getPerimeter());
-        }
+        System.out.printf("%s", shapeWithSecondPerimeter);
     }
 
     public static Shape getShapeWithMaxArea(Shape[] shapes) {
@@ -44,11 +34,7 @@ public class Main {
             throw new IllegalArgumentException("В полученном массиве отсутствуют фигуры");
         }
 
-        if (shapes.length == 1) {
-            return shapes[0];
-        }
-
-        Arrays.sort(shapes, new AreaComparator());
+        Arrays.sort(shapes, new ShapeAreaComparator());
         return shapes[shapes.length - 1];
     }
 
@@ -57,7 +43,7 @@ public class Main {
             throw new IllegalArgumentException("В полученном массиве меньше двух фигур");
         }
 
-        Arrays.sort(shapes, new PerimeterComparator());
+        Arrays.sort(shapes, new ShapePerimeterComparator());
         return shapes[shapes.length - 2];
     }
 }

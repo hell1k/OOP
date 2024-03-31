@@ -5,10 +5,14 @@ public class Circle implements Shape {
 
     public Circle(double radius) {
         if (radius <= 0) {
-            throw new IllegalArgumentException("Радиус должен быть больше нуля");
+            throw new IllegalArgumentException("Радиус должен быть больше нуля. Радиус: " + radius);
         }
 
         this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
     }
 
     @Override
