@@ -1,4 +1,4 @@
-package ru.academitschool.alekseev.shapes_main;
+package ru.academitschool.alekseev.shapes.comparators;
 
 import ru.academitschool.alekseev.shapes.Shape;
 
@@ -10,4 +10,3 @@ public class ShapePerimeterComparator implements Comparator<Shape> {
         return Double.compare(shape1.getPerimeter(), shape2.getPerimeter());
     }
 }
-

@@ -1,6 +1,8 @@
 package ru.academitschool.alekseev.shapes_main;
 
 import ru.academitschool.alekseev.shapes.*;
+import ru.academitschool.alekseev.shapes.comparators.ShapeAreaComparator;
+import ru.academitschool.alekseev.shapes.comparators.ShapePerimeterComparator;
 
 import java.util.Arrays;
 
@@ -20,13 +22,13 @@ public class Main {
         Shape shapeWithMaxArea = getShapeWithMaxArea(shapes);
 
         System.out.println("Фигура с максимальной площадью:");
-        System.out.printf("%s%n", shapeWithMaxArea);
+        System.out.println(shapeWithMaxArea);
         System.out.println();
 
         Shape shapeWithSecondPerimeter = getShapeWithSecondLargestPerimeter(shapes);
 
         System.out.println("Фигура со вторым по величине периметром:");
-        System.out.printf("%s", shapeWithSecondPerimeter);
+        System.out.println(shapeWithSecondPerimeter);
     }
 
     public static Shape getShapeWithMaxArea(Shape[] shapes) {

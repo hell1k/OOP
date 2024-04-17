@@ -1,4 +1,4 @@
-package ru.academitschool.alekseev.shapes_main;
+package ru.academitschool.alekseev.shapes.comparators;
 
 import ru.academitschool.alekseev.shapes.Shape;
 
